@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>YT Downloader</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">▶</span>
+            <h1>YT Downloader</h1>
+        </div>
+        <p class="subtitle">Fast & simple YouTube video downloader</p>
+    </header>
+
+    <!-- URL Input -->
+    <section class="card input-card">
+        <label class="card-label">YouTube URL</label>
+        <div class="input-row">
+            <input
+                    id="urlInput"
+                    type="text"
+                    placeholder="https://www.youtube.com/watch?v=..."
+                    autocomplete="off"
+                    spellcheck="false"
+            />
+            <button id="fetchBtn" onclick="handleFetch()">
+                Fetch Info
+            </button>
+        </div>
+        <span id="urlError" class="field-error hidden"></span>
+    </section>
+
+    <!-- Video Info -->
+    <section id="videoInfoCard" class="card video-card hidden">
+        <div class="video-meta">
+            <img id="thumbnail" src="" alt="Thumbnail" />
+            <div class="video-text">
+                <h2 id="videoTitle"></h2>
+                <p id="videoUploader" class="meta-item"></p>
+                <p id="videoDuration" class="meta-item"></p>
+                <p id="videoViews"    class="meta-item"></p>
+            </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Options -->
+        <div class="options-row">
+            <div class="option-group">
+                <label for="formatSelect">Format</label>
+                <select id="formatSelect" onchange="onFormatChange()">
+                    <option value="mp4">🎬 MP4 — Video</option>
+                    <option value="mp3">🎵 MP3 — Audio only</option>
+                </select>
+            </div>
+
+            <div class="option-group" id="qualityGroup">
+                <label for="qualitySelect">Quality</label>
+                <select id="qualitySelect">
+                    <option value="best">⭐ Best Available</option>
+                    <option value="1080">1080p Full HD</option>
+                    <option value="720">720p HD</option>
+                    <option value="480">480p SD</option>
+                    <option value="360">360p Low</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Download Button -->
+        <button id="downloadBtn" class="download-btn" onclick="handleDownload()">
+            ⬇ Download
+        </button>
+    </section>
+
+    <!-- Progress -->
+    <section id="progressCard" class="card progress-card hidden">
+        <p id="progressLabel">Preparing...</p>
+        <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden"></div>
+
+</div>
+
+<!-- JS Modules -->
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
