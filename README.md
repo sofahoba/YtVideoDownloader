@@ -1,5 +1,17 @@
 # YouTube Video Downloader
 
+
+## 🎥 Project Demo
+
+### Video 1
+<video src="./demo/testAudio.mkv" controls="controls" width="100%">
+</video>
+
+### Video 2
+<video src="./demo/testVideo.mkv" controls="controls" width="100%">
+</video>
+
+
 A full-stack web application that allows users to extract information and download YouTube videos in various formats (MP4, MP3) and qualities. 
 
 The project consists of a **Spring Boot (Java)** backend that orchestrates the downloading process using `yt-dlp` and `FFmpeg`, and a lightweight **Vanilla JavaScript** frontend.
